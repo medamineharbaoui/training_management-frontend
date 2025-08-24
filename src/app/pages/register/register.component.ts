@@ -20,7 +20,7 @@ export interface User {
   selector: 'app-register',
   templateUrl: './register.component.html',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, InputText, Select, ButtonDirective, Password, RouterLink],
+  imports: [CommonModule, ReactiveFormsModule, InputText, ButtonDirective, Password, RouterLink],
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {

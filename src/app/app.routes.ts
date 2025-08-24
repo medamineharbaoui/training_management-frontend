@@ -12,8 +12,9 @@ import { AuthRoleGuard } from './core/guards/auth-role.guard';
 export const routes: Routes = [
   {
     path: '',
-    component: WorkshopComponent
-  },
+    redirectTo: 'login',
+    pathMatch: 'full'
+    },
   {
     path: 'register',
     component: RegisterComponent
