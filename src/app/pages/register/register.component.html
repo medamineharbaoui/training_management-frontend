@@ -30,20 +30,6 @@
         </div>
       </div>
 
-      <!-- Role -->
-      <div class="mb-3">
-        <label for="role" class="form-label">Role</label>
-        <p-select [options]="roles"
-                  optionLabel="label"
-                  appendTo="body"
-                  formControlName="role"
-                  placeholder="Select a role"
-                  class="w-100">
-        </p-select>
-        <div *ngIf="registerForm.get('role')?.touched && registerForm.get('role')?.invalid" class="text-danger">
-          Role is required
-        </div>
-      </div>
 
       <!-- Submit Button -->
       <button pButton type="submit" label="Register" class="btn btn-primary w-100 mt-3"></button>
