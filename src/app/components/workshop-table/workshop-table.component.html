@@ -1,0 +1,43 @@
+<div class="p-4 shadow-sm">
+  <h3 class="mb-4">Workshops</h3>
+  <p-table [value]="workshops" [paginator]="true" [rows]="5" [responsiveLayout]="'scroll'">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Trainer</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-workshop>
+      <tr>
+        <td>{{ workshop.title }}</td>
+        <td>{{ workshop.description }}</td>
+        <td>{{ workshop.date | date:'short' }}</td>
+        <td>{{ getTrainerName(workshop.trainer) }}</td>
+        <td>
+          <ng-container *ngIf="userRole === 'admin'">
+            <button pButton icon="pi pi-pencil" class="btn btn-sm btn-warning me-2" (click)="onEdit(workshop)"></button>
+            <button pButton icon="pi pi-trash" class="btn btn-sm btn-danger" (click)="onDelete(workshop)"></button>
+          </ng-container>
+
+          <ng-container *ngIf="userRole === 'participant'">
+            <ng-container *ngIf="!workshop.is_enrolled; else enrolledText">
+              <button pButton icon="pi pi-plus" class="btn btn-sm btn-success me-2" (click)="onEnroll(workshop)">
+                Enroll
+              </button>
+            </ng-container>
+            <ng-template #enrolledText>
+              <span>Enrolled</span>
+            </ng-template>
+          </ng-container>
+
+          <ng-container *ngIf="userRole === 'trainer'">
+            <i pTooltip="Unauthorized" class="pi pi-ban text-danger"></i>
+          </ng-container>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

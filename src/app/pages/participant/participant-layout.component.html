@@ -1,0 +1,21 @@
+<div class="d-flex vh-100">
+  <!-- Sidebar -->
+  <div class="bg-primary text-white p-3" style="width: 200px;">
+    <h4 class="text-center mb-4">Participant Menu</h4>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2">
+        <a routerLink="/participant/my-workshops" class="nav-link text-white">My Workshops</a>
+      </li>
+
+      <li class="nav-item mt-auto">
+        <button pButton type="button" label="Logout" class="btn btn-danger w-100" (click)="onLogout()"></button>
+
+      </li>
+    </ul>
+  </div>
+
+  <!-- Content -->
+  <div class="flex-fill p-4 overflow-auto">
+    <router-outlet></router-outlet>
+  </div>
+</div>

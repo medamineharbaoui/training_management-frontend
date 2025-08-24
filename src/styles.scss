@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "primeicons/primeicons.css";
+
+body {
+  background: rgb(191 191 191 / 29%);
+}
+.p-password-input {
+  width: 100%;
+}
+
+.card {
+  max-width: 50%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 100%; // full width on tablets & mobiles
+    padding: 1rem;   // optional: add some padding
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-dialog {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+}
+
+.text-right{
+  text-align: right;
+}

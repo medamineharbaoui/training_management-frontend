@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <div class="card p-4 shadow-sm">
+    <h2 class="text-center mb-4">Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <!-- Username -->
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input id="username" type="text" pInputText class="form-control" formControlName="username">
+        <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid" class="text-danger">
+          Username is required
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email" pInputText class="form-control" formControlName="email">
+        <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="text-danger">
+          Valid email is required
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <p-password id="password" formControlName="password" [feedback]="false" class="w-100"></p-password>
+        <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="text-danger">
+          Password is required
+        </div>
+      </div>
+
+      <!-- Role -->
+      <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <p-select [options]="roles"
+                  optionLabel="label"
+                  appendTo="body"
+                  formControlName="role"
+                  placeholder="Select a role"
+                  class="w-100">
+        </p-select>
+        <div *ngIf="registerForm.get('role')?.touched && registerForm.get('role')?.invalid" class="text-danger">
+          Role is required
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button pButton type="submit" label="Register" class="btn btn-primary w-100 mt-3"></button>
+    </form>
+    <div class="w-100 mt-4 text-end">
+      <a routerLink="/login" class="text-primary fw-medium text-decoration-none">
+        &larr; Back to Login
+      </a>
+    </div>
+  </div>
+</div>
