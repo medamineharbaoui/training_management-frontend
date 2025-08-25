@@ -1,59 +1,51 @@
 # TrainingManagementFE
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Angular 19 Application Setup
 
-## Development server
+This guide provides simple steps to set up and run the Angular 19 application locally.
 
-To start a local development server, run:
+## Prerequisites
 
-```bash
-ng serve
-```
+- Node.js 18.x or higher
+- npm 10.x or higher
+- Git
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Setup Instructions
 
-## Code scaffolding
+### 1. Clone the Repository
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Clone the project from GitHub to your local machine:
 
 ```bash
-ng generate --help
+git clone https://github.com/medamineharbaoui/training_management-frontend
+cd your-repo-name
 ```
 
-## Building
 
-To build the project run:
+### 2. Install Dependencies
+
+Install the required npm packages, using the legacy peer dependencies flag to handle compatibility:
 
 ```bash
-ng build
+npm install --legacy-peer-deps
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### 3. Run the Development Server
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Start the Angular development server:
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+The application will be available at `http://localhost:4200/`. Open this URL in your browser to view the app.
 
-For end-to-end (e2e) testing, run:
+## Troubleshooting
 
-```bash
-ng e2e
-```
+- **Dependency Issues**: If `npm install` fails, ensure Node.js and npm versions are compatible with Angular 19.
+- **Port Conflicts**: If port 4200 is in use, the server will prompt to use a different port.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## License
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
